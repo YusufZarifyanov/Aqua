@@ -141,6 +141,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 0 5vw;
 }
 
 .works__profit {
@@ -153,8 +154,8 @@ export default {
 }
 
 img {
-  width: 25vw;
-  height: 25vw;
+  width: 24vw;
+  height: 24vw;
   padding: 20px 20px;
 }
 

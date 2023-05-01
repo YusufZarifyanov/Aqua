@@ -5,53 +5,96 @@
       <p>С вами свяжется наш специалист</p>
     </div>
 
-    <form @submit.prevent>
-      <Input
-          v-model="name"
-          type="text"
-          placeholder="Имя"
-      />
-      <Input
-          v-model="phone"
-          type="text"
-          placeholder="Телефон"
-      />
-      <Input
-          v-model="email"
-          type="text"
-          placeholder="E-mail"
-      />
+    <form @submit.prevent="submit">
+      <div class="price__input">
+        <v-text-field
+            v-model="name.value.value"
+            :counter="10"
+            :error-messages="name.errorMessage.value"
+            label="Имя"
+            bg-color="white"
+        ></v-text-field>
+      </div>
 
-      <button
+      <div class="price__input">
+        <v-text-field
+            v-model="phone.value.value"
+            :counter="7"
+            :error-messages="phone.errorMessage.value"
+            label="Телефон"
+            class="price__input"
+            bg-color="white"
+        ></v-text-field>
+      </div>
+
+      <div class="price__input">
+        <v-text-field
+            v-model="email.value.value"
+            :error-messages="email.errorMessage.value"
+            label="E-mail"
+            class="price__input"
+            bg-color="white"
+        ></v-text-field>
+      </div>
+
+      <v-btn
           class="price__button"
-          @click="sendMsgToEmail"
+          type="submit"
+          height="58px"
       >
         Отправить заявку
-      </button>
+      </v-btn>
     </form>
   </div>
 </template>
 
 <script>
-import Input from "@/components/UI/Input";
+import { useField, useForm } from 'vee-validate'
+import axios from "axios";
 
 export default {
   name: "Price",
-  components: {
-    Input
+  setup () {
+    const { handleSubmit, handleReset } = useForm({
+      validationSchema: {
+        name (value) {
+          if (value?.length >= 2) return true
+
+          return 'Длина имени должна быть больше 2 символов.'
+        },
+        phone (value) {
+          if (value?.length > 9 && /[0-9-]+/.test(value)) return true
+
+          return 'Укажите корретный телефон'
+        },
+        email (value) {
+          if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+
+          return 'Укажите корректный e-mail.'
+        },
+      },
+    })
+
+    const name = useField('name')
+    const phone = useField('phone')
+    const email = useField('email')
+
+    const submit = handleSubmit(values => {
+      console.log(values)
+      axios.post(
+          `${process.env.VUE_APP_SERVER_URL}/email/send`,
+          {
+            name: values.name,
+            phone: values.phone,
+            email: values.email
+          }
+      )
+
+      handleReset()
+    })
+
+    return { name, phone, email, submit }
   },
-  data() {
-    return {
-      name: '',
-      phone: '',
-      email: '',
-    }
-  },
-  methods: {
-    sendMsgToEmail() {
-      console.log(this.name, this.phone, this.email)
-    }
-  }
 }
 </script>
 
@@ -78,18 +121,24 @@ export default {
 }
 
 .price__button {
-  width: 100%;
+  width: 15vw;
   background-color: yellow;
-  margin: 15px;
   border-radius: 5px;
+  height: 56px;
 
-  padding: 20px;
+  margin-left: 30px;
+}
+
+.price__input {
+  width: 15vw;
+  margin: 0 20px;
 }
 
 form {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  justify-content: center;
+  width: 100vw;
 }
 
 h1 {
@@ -108,13 +157,24 @@ h1 {
   color: white;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   form {
     flex-direction: column;
+    align-items: center;
   }
 
   .price__text {
     width: 80%;
+  }
+
+  .price__input {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  .price__button {
+    margin: 20px 0;
+    width: 50vw;
   }
 }
 
