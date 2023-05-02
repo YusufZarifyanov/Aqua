@@ -14,9 +14,11 @@
       :key="imageObj.id"
       ></ServiceItem>
     </div>
-    <div class="services__downloadLink">
-      <a href="../assets/files/Price_aqua_service.pdf" download="">СКАЧАТЬ ПРАЙС-ЛИСТ</a>
-    </div>
+    <a href="https://192.168.50.112:8080/file.pdf">
+      <button class="services__downloadLink">
+        ПОСМОТРЕТЬ ПРАЙС-ЛИСТ
+      </button>
+    </a>
   </div>
 </template>
 
@@ -27,6 +29,7 @@ import image from "@/assets/images/serviceImg1.jpg"
 export default {
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       images: [
         {
           id: 1,
@@ -92,6 +95,8 @@ export default {
     padding: 15px;
     margin: 40px;
     border-radius: 10px;
+    color: black;
+    transition: background-color 0.5s ease-in 0.3s;
   }
 
   h1 {
@@ -108,6 +113,15 @@ export default {
     text-align: center;
     line-height: 1.5;
     font-size: 24px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button:hover {
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
   }
 
   @media (max-width: 1000px) {
