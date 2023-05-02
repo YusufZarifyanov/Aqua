@@ -19,22 +19,40 @@
         <i class="fab fa-telegram-plane fa-lg"></i>
       </a>
     </div>
+
+    <div id="map" class="contacts__location"></div>
+
   </div>
 </template>
 
 <script>
+function init() {
+  const center = [55.719094, 52.368539]
+
+  // eslint-disable-next-line
+  const map = new ymaps.Map("map", {
+    center,
+    zoom: 15
+  });
+
+  // eslint-disable-next-line
+  let placemark = new ymaps.Placemark(center, {}, {});
+
+  map.controls.remove('geolocationControl'); // удаляем геолокацию
+  map.controls.remove('searchControl'); // удаляем поиск
+  map.controls.remove('trafficControl'); // удаляем контроль трафика
+  map.controls.remove('typeSelector'); // удаляем тип
+  map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+  map.controls.remove('rulerControl'); // удаляем контрол правил
+
+  map.geoObjects.add(placemark);
+}
+
 export default {
   name: "Contacts",
-  data: () => ({
-    coords: [
-      54.82896654088406,
-      39.831893822753904,
-    ],
-  }),
-  methods: {
-    onClick(e) {
-      this.coords = e.get('coords');
-    },
+  mounted() {
+    // eslint-disable-next-line
+    ymaps.ready(init);
   },
 }
 </script>
@@ -42,7 +60,7 @@ export default {
 <style scoped>
 .contacts {
   background-color: #f0f0f0;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,9 +71,10 @@ export default {
 }
 
 .contacts__location {
-  width: 70%;
-  height: 500px;
-  /*background-color: gray;*/
+  width: 1000px;
+  height: 400px;
+  background-color: gray;
+  margin-bottom: 40px;
 }
 
 .contacts__icons {
@@ -72,6 +91,12 @@ h1 {
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 1050px) {
+  .contacts__location {
+    width: 90%;
+  }
 }
 
 </style>

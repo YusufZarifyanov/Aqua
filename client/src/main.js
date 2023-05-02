@@ -1,10 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import {ymapMarker} from "vue-yandex-maps";
-import {yandexMap } from "vue-yandex-maps";
-import YmapPlugin from 'vue-yandex-maps'
-
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
@@ -23,22 +19,10 @@ const vuetify = createVuetify({
             fa
         },
     },
-    components: {
-        ...components,
-        yandexMap,
-        ymapMarker
-    },
+    components
 
 })
 
-const settings = {
-    apiKey: '09e2d4d1-86f9-41b4-bcff-07351c8a1b4d',
-    lang: 'ru_RU',
-    coordorder: 'latlong',
-    enterprise: false,
-    version: '2.1'
-}
-
 const app = createApp(App);
 app.config.globalProperties.$http = axios;
-app.use(YmapPlugin, settings).use(vuetify).mount('#app')
+app.use(vuetify).mount('#app')
