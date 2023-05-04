@@ -58,7 +58,7 @@ export default {
 
 img {
   width: 80%;
-  height: 80%;
+  height: 60%;
 }
 
 p {
@@ -69,6 +69,11 @@ p {
   .serviceItem {
     width: 75%;
     margin-bottom: 40px;
+  }
+
+  img {
+   width: 300px;
+    height: 300px;
   }
 }
 

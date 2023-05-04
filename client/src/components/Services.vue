@@ -14,7 +14,7 @@
       :key="imageObj.id"
       ></ServiceItem>
     </div>
-    <a href="https://192.168.50.112:8080/file.pdf">
+    <a href="file.pdf">
       <button class="services__downloadLink">
         ПОСМОТРЕТЬ ПРАЙС-ЛИСТ
       </button>
@@ -24,7 +24,10 @@
 
 <script>
 import ServiceItem from "@/components/ServiceItem";
-import image from "@/assets/images/serviceImg1.jpg"
+import image1 from "@/assets/images/serviceImg1.jpg"
+import image2 from "@/assets/images/serviceImg2.png"
+import image3 from "@/assets/images/worksImg4.jpg"
+import image4 from "@/assets/images/serviceImg4.png"
 
 export default {
   data() {
@@ -33,22 +36,22 @@ export default {
       images: [
         {
           id: 1,
-          image,
+          image: image1,
           description: "Котельные и тепловые пункты"
         },
         {
           id: 2,
-          image,
+          image: image2,
           description: "Водоснабжение и канализация"
         },
         {
           id: 3,
-          image,
+          image: image3,
           description: "Теплый пол"
         },
         {
           id: 4,
-          image,
+          image: image4,
           description: "Радиаторное отопление"
         },
       ]

@@ -8,19 +8,19 @@
 
     <p style="padding-top: 30px">Адрес нашего офиса: Набережночелнинский проспект 45а</p>
 
+    <div id="map" class="contacts__location"></div>
+
     <div class="contacts__icons">
       <a href="https://service.aqua16.ru/">
         <i class="fab fa-twitter fa-lg"></i>
       </a>
-      <a href="https://vk.com/sk_aqua16">
+      <a href="https://vk.com/sk_aqua">
         <i class="fab fa-vk fa-lg"></i>
       </a>
-      <a href="https://service.aqua16.ru/">
+      <a href="https://t.me/adele_aout">
         <i class="fab fa-telegram-plane fa-lg"></i>
       </a>
     </div>
-
-    <div id="map" class="contacts__location"></div>
 
   </div>
 </template>
@@ -60,7 +60,7 @@ export default {
 <style scoped>
 .contacts {
   background-color: #f0f0f0;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,7 @@ export default {
   width: 1000px;
   height: 400px;
   background-color: gray;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .contacts__icons {
