@@ -13,4 +13,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 8090
-CMD [ "npm", "run", "test:dev" ]
+CMD [ "http-server", "dist" ]
