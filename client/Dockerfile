@@ -1,16 +1,16 @@
-FROM node:lts-alpine
+# FROM node:lts-alpine
 
-RUN npm install -g http-server
+# RUN npm install -g http-server
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY package*.json ./
+# COPY package*.json ./
 
-RUN npm install
+# RUN npm install
 
-COPY . .
+# COPY . .
 
-RUN npm run build
+# RUN npm run build
 
-EXPOSE 8090
-CMD [ "http-server", "dist" ]
+# EXPOSE 8090
+# CMD [ "http-server", "dist" ]
