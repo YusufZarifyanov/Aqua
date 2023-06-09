@@ -24,9 +24,10 @@ router.post(
     "/send",
     (req, res) => {
         const {name, phone, email} = req.body
-
+        console.log(1, process.env.EMAIL_PASSWORD)
         transporter.sendMail(createMailOptions(name, phone, email), function(error, info){
             if (error) {
+                console.log("error", error)
                 throw createError(500, error);
             } else {
                 res.status(200).json({
