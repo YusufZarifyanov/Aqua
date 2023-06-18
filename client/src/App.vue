@@ -2,6 +2,8 @@
   <Navbar></Navbar>
   <Home></Home>
   <Services></Services>
+  <Restrictions></Restrictions>
+  <Rates></Rates>
   <Works></Works>
   <Price></Price>
   <Steplist></Steplist>
@@ -18,6 +20,8 @@ import Price from "@/components/Price";
 import Steplist from "@/components/Steplist";
 import ExpansionPanel from "@/components/ExpansionPanel";
 import Contacts from "@/components/Contacts";
+import Restrictions from "@/components/Restrictions"
+import Rates from "@/components/Rates.vue";
 
 export default {
   components: {
@@ -28,7 +32,9 @@ export default {
     Price,
     Steplist,
     ExpansionPanel,
-    Contacts
+    Contacts,
+    Restrictions,
+    Rates
   }
 }
 </script>
