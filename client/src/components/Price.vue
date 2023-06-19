@@ -68,7 +68,7 @@ export default {
           return 'Укажите корретный телефон'
         },
         email (value) {
-          if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+          if (/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu.test(value)) return true
 
           return 'Укажите корректный e-mail.'
         },
