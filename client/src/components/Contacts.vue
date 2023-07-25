@@ -10,16 +10,22 @@
 
     <div id="map" class="contacts__location"></div>
 
-    <div class="contacts__icons">
-      <a href="https://service.aqua16.ru/">
-        <i class="fab fa-twitter fa-lg"></i>
-      </a>
-      <a href="https://vk.com/sk_aqua">
-        <i class="fab fa-vk fa-lg"></i>
-      </a>
-      <a href="https://t.me/adele_aout">
-        <i class="fab fa-telegram-plane fa-lg"></i>
-      </a>
+    <div class="contacts__meta">
+      <div class="contacts__left">
+        <router-link to="/policy">Политика конфидецианольности</router-link>
+      </div>
+      <div class="contacts__icons">
+        <a href="https://service.aqua16.ru/">
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a href="https://vk.com/sk_aqua">
+          <i class="fab fa-vk fa-lg"></i>
+        </a>
+        <a href="https://t.me/adele_aout">
+          <i class="fab fa-telegram-plane fa-lg"></i>
+        </a>
+      </div>
+      <div class="contacts__right"></div>
     </div>
 
   </div>
@@ -60,7 +66,6 @@ export default {
 <style scoped>
 .contacts {
   background-color: #f0f0f0;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,12 +82,25 @@ export default {
   margin: 40px 0;
 }
 
+.contacts__meta {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  width: 90%;
+  height: 50px;
+}
+
 .contacts__icons {
-  height: 100px;
+  /* height: 100px; */
   width: 100px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+}
+
+.contacts__left, .contacts__right {
+  flex: 1;
+  text-align: start;
+  font-size: 14px;
 }
 
 h1 {

@@ -10,6 +10,7 @@ import "@mdi/font/css/materialdesignicons.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 import axios from 'axios';
+import router from './router'
 
 const vuetify = createVuetify({
     icons: {
@@ -23,6 +24,9 @@ const vuetify = createVuetify({
 
 })
 
-const app = createApp(App);
+
+const app = createApp(App).use(router);
+
 app.config.globalProperties.$http = axios;
-app.use(vuetify).mount('#app')
+
+app.use(router).use(vuetify).mount('#app')

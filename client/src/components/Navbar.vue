@@ -1,10 +1,13 @@
 <template>
   <div class="navbar">
-    <div class="navbar__title">
-      <span style="color: yellow">АКВА </span>
-      <span>Сервис Регион</span>
-    </div>
-    <div class="navbar__btns">
+    <router-link to="/" style="text-decoration: none;">
+      <div class="navbar__title">
+        <span style="color: yellow">АКВА </span>
+        <span>Сервис Регион</span>
+      </div>
+    </router-link>
+    
+    <div class="navbar__btns" v-show="isMainMode">
       <a class="navbar__btn" href="#service">Услуги</a>
       <a class="navbar__btn" href="#work">Работы</a>
       <a class="navbar__btn" href="#price">Цены</a>
@@ -20,7 +23,13 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  props: ['isMain'],
+  data() {
+    return {
+      isMainMode: this.isMain
+    }
+  }
 }
 </script>
 

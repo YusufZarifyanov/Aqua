@@ -80,7 +80,6 @@ export default {
     const email = useField('email')
 
     const submit = handleSubmit(values => {
-      console.log(values)
       axios.post(
           `${process.env.VUE_APP_SERVER_URL}/email/send`,
           {
@@ -89,6 +88,8 @@ export default {
             email: values.email
           }
       )
+
+      alert("Сообщение успешно отправлено!");
 
       handleReset()
     })

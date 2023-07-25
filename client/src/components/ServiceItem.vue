@@ -1,6 +1,8 @@
 <template>
   <div class="serviceItem">
-    <img :src="image">
+    <div class="serviceItem__image">
+      <img :src="image">
+    </div>
 
     <div class="serviceItem__description">
       <p>{{description}}</p>
@@ -34,8 +36,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
-  margin-bottom: 20px;
+  width: 23%;
+  height: 500px;
+  margin: 1rem;
+  /* margin-bottom: 20px; */
 }
 
 .serviceItem__description {
@@ -56,9 +60,17 @@ export default {
   text-align: center;
 }
 
-img {
-  width: 80%;
-  height: 60%;
+.serviceItem__image {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.serviceItem__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 p {
@@ -69,12 +81,13 @@ p {
   .serviceItem {
     width: 75%;
     margin-bottom: 40px;
+    background-size: cover;
   }
 
-  img {
+  /* img {
    width: 300px;
     height: 300px;
-  }
+  } */
 }
 
 @media (max-width: 550px) {

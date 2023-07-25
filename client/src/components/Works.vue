@@ -4,11 +4,13 @@
     <h1>Примеры работ</h1>
   </div>
   <div class="works__images">
-    <img
-    v-for="imageObj in imageObjs"
-    :src="imageObj.image"
-    :key="imageObj.id"
+    <div 
+      class="work__image"
+      v-for="imageObj in imageObjs"
+      :key="imageObj.id"
     >
+      <img :src="imageObj.image">
+    </div>
   </div>
 
   <div class="works__title">
@@ -140,8 +142,20 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 0 5vw;
+  align-self: self-start;
+  /* justify-content: space-between; */
+  /* margin: 0 5vw; */
+}
+
+.work__image {
+  flex-grow: 1;
+  width: 20vw;
+  height: 20vw;
+}
+
+.work__image img {
+  width: 100%;
+  height: 100%;
 }
 
 .works__profit {
@@ -159,21 +173,17 @@ img {
   padding: 20px 20px;
 }
 
-@media (max-width: 950px) {
-  img {
-    width: 45vw;
-    height: 45vw;
-    padding: 5px 5px;
-  }
-
-  .works__images {
-    justify-content: center;
+@media (max-width: 1250px) {
+  .work__image {
+    width: 30vw;
+    height: 30vw;
   }
 }
 
-@media (max-width: 450px) {
-  h1 {
-    font-size: 25px;
+@media (max-width: 950px) {
+  .work__image {
+    width: 40vw;
+    height: 40vw;
   }
 }
 </style>
