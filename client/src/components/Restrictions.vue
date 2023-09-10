@@ -1,7 +1,7 @@
 <template>
     <div class="restriction">
         <div class="restriction_content">
-            <div class="restriction_content_text">
+              <div>
                 <h2>ОГРАНИЧЕНИЯ</h2>
                 <p>НЕ ДЕЛАЕМ:</p>
                 <ul>
@@ -9,7 +9,7 @@
                     <li>ПРАВКИ ЧУЖИХ ПРОЕКТОВ</li>
                     <li>ПРОМЫШЛЕННЫЕ ОБЪЕКТЫ</li>
                 </ul>
-            </div>
+              </div>
         </div>
         <div class="restriction_img"></div>
     </div>
@@ -34,6 +34,7 @@
     background-color: yellow;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .restriction_img {
@@ -41,10 +42,6 @@
     background-image: url("@/assets/images/priceImg.jpg"); 
     background-size: cover;
     background-position: center;
-  }
-
-  .restriction_content_text {
-    padding-left: 3vw;
   }
 
   h2 {
@@ -92,6 +89,7 @@
 
     .restriction_content {
         height: 100%;
+        font-size: 15px;
     }
     .restriction_img {
         height: 0vh;

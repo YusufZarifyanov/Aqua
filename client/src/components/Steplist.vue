@@ -8,7 +8,7 @@
       <v-timeline v-if="!small" direction= "horizontal" truncate-line="both">
         <v-timeline-item>
           <div class="steplist__proc__item">
-            <div class="text-h6" style="font-weight: 600">Согласование</div>
+            <div class="text-h6" style="font-weight: 600"><h3>Согласование</h3></div>
             <p>
               Заказчик согласовывает стоимость и состав проектирования с менеджером проекта
             </p>
@@ -46,7 +46,7 @@
       <v-timeline v-else direction= "vertical" truncate-line="both">
         <v-timeline-item>
           <div class="steplist__proc__item">
-            <div class="text-h6" style="font-weight: 600">Согласование</div>
+            <h3>Согласование</h3>
             <p>
               Заказчик согласовывает стоимость и состав проектирования с менеджером проекта
             </p>
@@ -55,7 +55,7 @@
 
         <v-timeline-item>
           <div class="steplist__proc__item">
-            <div class="text-h6" style="font-weight: 600">Техническое задание</div>
+            <h3>Техническое задание</h3>
             <p>
               Составляется техническое задание для проекта
             </p>
@@ -64,7 +64,7 @@
 
         <v-timeline-item>
           <div class="steplist__proc__item">
-            <div class="text-h6" style="font-weight: 600">Договор</div>
+            <h3>Договор</h3>
             <p>
               Заключается договор на проектирование и вносится предоплата
             </p>
@@ -73,7 +73,7 @@
 
         <v-timeline-item>
           <div class="steplist__proc__item">
-            <div class="text-h6" style="font-weight: 600">Правки и сдача проекта</div>
+            <h3>Правки и сдача проекта</h3>
             <p>
               Заказчик вносит правки и после оплачивает остаток по договору.
               Заказчику передается спецификация на материалы и оборудование
@@ -158,6 +158,26 @@ p {
 
   .steplist__proc__item {
     width: 30vw;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  p {
+    font-size: 10px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  .steplist__proc__item {
+    width: 20vw;
+    text-align: center;
+  }
+
+  .steplist__proc__item {
+    text-align: center;
   }
 }
 </style>

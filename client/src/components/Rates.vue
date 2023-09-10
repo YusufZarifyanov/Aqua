@@ -35,7 +35,7 @@
   }
 
   .rate__content {
-    color: white;
+    color: yellow;
     text-align: center;
   }
 
@@ -60,6 +60,16 @@
 
     ol {
     font-size: 15px;
+  }
+  }
+
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 15px
+    }
+
+    ol {
+    font-size: 10px;
   }
   }
   
