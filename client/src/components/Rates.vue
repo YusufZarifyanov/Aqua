@@ -37,6 +37,8 @@
   .rate__content {
     color: yellow;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
   }
 
   h2 {

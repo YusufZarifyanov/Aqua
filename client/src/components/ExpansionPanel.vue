@@ -28,7 +28,7 @@
       </v-expansion-panels>
     </div>
     <div class="expansionPanel__description">
-      <p>Если у вас остались, вопросы, пожалуйста, напишите нам на <span style="color: rgb(255, 130, 46)">service@aqua16.ru</span> или свяжемся по телефону</p>
+      <p>Если у вас остались, вопросы, пожалуйста, напишите нам на <a class="email-but" href="mailto:service@aqua16.ru">service@aqua16.ru</a> или свяжемся по телефону</p>
     </div>
   </div>
 </template>
@@ -65,5 +65,11 @@ export default {
   margin: 40px 0;
   width: 80%;
   text-align: center;
+}
+
+.email-but {
+  color: rgb(255, 130, 46);
+  text-decoration: none;
+  /* font-size: 30px; */
 }
 </style>

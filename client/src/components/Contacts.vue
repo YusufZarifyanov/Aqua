@@ -1,10 +1,11 @@
 <template>
   <div class="contacts" id="contact">
-    <div class="contacts__phone">
-      <h1>+7(8552)20-00-11</h1>
-      <h1>+7(967)379-00-11</h1>
-      <h2 style="color: rgb(255, 130, 46)">service@aqua16.ru</h2>
-    </div>
+    <!-- <div class="contacts__phone">  -->
+      <a class="phone-but" href="tel:+7(8552)20-00-11">+7(8552)20-00-11</a>
+      <a class="phone-but" href="tel:+7(967)379-00-11">+7(967)379-00-11</a>
+      <a class="email-but" href="mailto:service@aqua16.ru">service@aqua16.ru</a>
+      <!-- <h2 style="color: rgb(255, 130, 46)">service@aqua16.ru</h2> -->
+    <!-- </div> -->
 
     <p style="padding-top: 30px">Адрес нашего офиса: Набережночелнинский проспект 45а</p>
 
@@ -14,7 +15,7 @@
       <div class="contacts__left">
         <router-link to="/policy">Политика конфидецианольности</router-link>
       </div>
-      <div class="contacts__icons">
+      <!-- <div class="contacts__icons">
         <a href="https://service.aqua16.ru/">
           <i class="fab fa-twitter fa-lg"></i>
         </a>
@@ -24,7 +25,7 @@
         <a href="https://t.me/adele_aout">
           <i class="fab fa-telegram-plane fa-lg"></i>
         </a>
-      </div>
+      </div> -->
       <div class="contacts__right"></div>
     </div>
 
@@ -72,6 +73,8 @@ export default {
 }
 
 .contacts__phone {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -103,8 +106,19 @@ export default {
   font-size: 14px;
 }
 
-h1 {
+.phone-but {
   padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.email-but {
+  color: rgb(255, 130, 46);
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 a {

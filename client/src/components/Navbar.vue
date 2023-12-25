@@ -14,8 +14,8 @@
       <a class="navbar__btn" href="#contact">Контакты</a>
     </div>
     <div class="navbar__contacts">
-      <span>+7(8552)20-00-11</span>
-      <span>+7(967)379-00-11</span>
+      <a class="phone-but" href="tel:+7(8552)20-00-11">+7(8552)20-00-11</a>
+      <a class="phone-but" href="tel:+7(967)379-00-11">+7(967)379-00-11</a>
       <span>Пн.-Пт. 8:00-17:00</span>
     </div>
   </div>
@@ -58,6 +58,10 @@ export default {
   margin: 10px;
 }
 
+.navbar__btn:hover {
+  color: rgb(156, 152, 23);
+}
+
 .navbar__title {
   color: white;
   font-size: 25px;
@@ -68,6 +72,11 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+}
+
+.phone-but {
+  text-decoration: none;
+  color: yellow;
 }
 
 @media (max-width: 1000px) {

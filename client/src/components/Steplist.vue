@@ -128,6 +128,7 @@ export default {
   height: 100px;
   background-color: yellow;
   padding-top: 5vh;
+  overflow: hidden;
 }
 
 .steplist__proc__item {
