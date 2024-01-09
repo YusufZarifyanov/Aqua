@@ -60,6 +60,10 @@ export default {
   text-align: center;
 }
 
+.serviceItem__btn:hover {
+  background-color: rgb(55, 53, 2);
+}
+
 .serviceItem__image {
   height: 300px;
   overflow: hidden;

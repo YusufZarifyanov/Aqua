@@ -74,6 +74,10 @@ export default {
   text-align: center;
 }
 
+.home__btn1:hover {
+  background-color: rgb(223, 238, 6);
+}
+
 .home__btn2 {
   width: 160px;
   height: 50px;
@@ -88,6 +92,10 @@ export default {
   text-align: center;
 
   margin-left: 10px;
+}
+
+.home__btn2:hover {
+  background-color: rgb(223, 238, 6);
 }
 
 p {

@@ -1,16 +1,16 @@
 <template>
   <div class="navbar">
     <div class="navbar__container">
+        <a href="https://aqua16.ru">
+            <button class="navbar__link">
+              Вернуться на главный сайт
+            </button>
+          </a>
         <div class="navbar__title">
           <router-link to="/" style="text-decoration: none;">
             <span style="color: yellow">АКВА </span>
             <span style="color: white">Сервис Регион</span>
           </router-link>
-          <a href="https://aqua16.ru">
-            <button class="navbar__link">
-              Вернуться на главный сайт
-            </button>
-          </a>
         </div>
     
       <div class="navbar__btns" v-show="isMainMode">
@@ -76,17 +76,26 @@ export default {
   color: rgb(156, 152, 23);
 }
 
+.navbar__container__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar__link {
   width: 300px;
-  height: 50px;
-
-  font-size: 16px;
-  text-decoration: none;
-  color: white;
+  height: 35px;
+  background-color: yellow;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .navbar__link:hover {
-  color: rgb(156, 152, 23);
+  background-color: rgb(223, 238, 6);
 }
 
 .navbar__title {
@@ -114,6 +123,10 @@ export default {
   color: yellow;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (max-width: 1000px) {
   .navbar {
     flex-direction: column;
@@ -132,11 +145,20 @@ export default {
   .navbar__contacts {
     margin-bottom: 20px;
   }
+
+  .navbar__link {
+    margin: 20px;
+  }
 }
 
 @media (max-width: 1600px) {
  .navbar__container {
-  width: 90%;
+  width: 100%;
+ }
+
+ .navbar__link {
+  width: 200px;
+  height: 50px;
  }
 }
 </style>
