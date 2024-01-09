@@ -1,20 +1,22 @@
 <template>
   <div class="home">
-    <div class="home__title">
-      <p>Проектирование и монтаж систем отопления в частных домах под ключ</p>
-    </div>
-    <div class="home__btns">
-      <a href="#price" style="color: black">
-        <button class="home__btn1">
-          Рассчитать стоимость
-        </button>
-      </a>
+    <div class="home__container">
+      <div class="home__title">
+        <p>Проектирование и монтаж систем отопления в частных домах под ключ</p>
+      </div>
+      <div class="home__btns">
+        <a href="#price" style="color: black">
+          <button class="home__btn1">
+            Рассчитать стоимость
+          </button>
+        </a>
 
-      <a href="#service">
-        <button class="home__btn2">
-          Услуги
-        </button>
-      </a>
+        <a href="#service">
+          <button class="home__btn2">
+            Услуги
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -27,21 +29,27 @@ export default {
 
 <style scoped>
 .home {
-  height: 90vh;
   background-image:
-      linear-gradient(to bottom, rgba(4, 69, 87, 0.80), rgba(117, 19, 93, 0.73)),
+      linear-gradient(rgba(4,69,87,0.50), rgba(4,30,56,0.80)),
       url("@/assets/images/homeImg.jpg");
   background-size: cover;
-  min-height: 90vh;
+  min-height: 92vh;
+  width: 100%;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__container {
+  width: 60%;
+  display: flex;
   flex-direction: column;
-  padding: 10vh 0 38px 10vw;
 }
 
 .home__title {
-  width: 60vw;
-  min-height: 60px;
+  width: 700px;
+  font-size: 52px;
   font-weight: 600;
   text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.20);
   text-align: left;
@@ -51,13 +59,11 @@ export default {
 .home__btns {
   display: flex;
   flex-direction: row;
-  width: 50vw;
-  justify-content: space-around;
   margin-top: 10vh;
 }
 
 .home__btn1 {
-  width: 20vw;
+  width: 300px;
   height: 50px;
   background-color: yellow;
   color: black;
@@ -69,7 +75,7 @@ export default {
 }
 
 .home__btn2 {
-  width: 15vw;
+  width: 160px;
   height: 50px;
   background: none;
   border: 1px solid white;
@@ -80,6 +86,8 @@ export default {
   color: white;
   text-decoration: none;
   text-align: center;
+
+  margin-left: 10px;
 }
 
 p {
@@ -106,13 +114,17 @@ a {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   p {
     font-size: 30px;
   }
 
   .home {
     padding-top: 20vh;
+  }
+
+  .home__title {
+    font-size: 30px;
   }
 }
 
@@ -129,5 +141,16 @@ a {
     margin-top: 20px;
     width: 40vw;
   }
+}
+
+@media (max-width: 1600px) {
+ .home__container {
+  width: 80%;
+ }
+
+ .home__title {
+  width: 80%;
+  font-size: 48px;
+ }
 }
 </style>

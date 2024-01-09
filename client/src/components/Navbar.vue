@@ -1,22 +1,29 @@
 <template>
   <div class="navbar">
-    <router-link to="/" style="text-decoration: none;">
-      <div class="navbar__title">
-        <span style="color: yellow">АКВА </span>
-        <span>Сервис Регион</span>
-      </div>
-    </router-link>
+    <div class="navbar__container">
+        <div class="navbar__title">
+          <router-link to="/" style="text-decoration: none;">
+            <span style="color: yellow">АКВА </span>
+            <span style="color: white">Сервис Регион</span>
+          </router-link>
+          <a href="https://aqua16.ru">
+            <button class="navbar__link">
+              Вернуться на главный сайт
+            </button>
+          </a>
+        </div>
     
-    <div class="navbar__btns" v-show="isMainMode">
-      <a class="navbar__btn" href="#service">Услуги</a>
-      <a class="navbar__btn" href="#work">Работы</a>
-      <a class="navbar__btn" href="#price">Цены</a>
-      <a class="navbar__btn" href="#contact">Контакты</a>
-    </div>
-    <div class="navbar__contacts">
-      <a class="phone-but" href="tel:+7(8552)20-00-11">+7(8552)20-00-11</a>
-      <a class="phone-but" href="tel:+7(967)379-00-11">+7(967)379-00-11</a>
-      <span>Пн.-Пт. 8:00-17:00</span>
+      <div class="navbar__btns" v-show="isMainMode">
+        <a class="navbar__btn" href="#service">Услуги</a>
+        <a class="navbar__btn" href="#work">Работы</a>
+        <a class="navbar__btn" href="#price">Цены</a>
+        <a class="navbar__btn" href="#contact">Контакты</a>
+      </div>
+      <div class="navbar__contacts">
+        <a class="phone-but" href="tel:+7(8552)20-00-11">+7(8552)20-00-11</a>
+        <a class="phone-but" href="tel:+7(967)379-00-11">+7(967)379-00-11</a>
+        <span>Пн.-Пт. 8:00-17:00</span>
+      </div>
     </div>
   </div>
 </template>
@@ -38,9 +45,16 @@ export default {
   width: 100%;
   background-color: black;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  min-height: 8vh;
+}
+
+.navbar__container {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  width: 70%;
 }
 
 .navbar__btns {
@@ -62,10 +76,31 @@ export default {
   color: rgb(156, 152, 23);
 }
 
+.navbar__link {
+  width: 300px;
+  height: 50px;
+
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar__link:hover {
+  color: rgb(156, 152, 23);
+}
+
 .navbar__title {
   color: white;
-  font-size: 25px;
-}
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;;
+  justify-content: center;
+  align-items: center;
+} 
 
 .navbar__contacts {
   color: yellow;
@@ -84,6 +119,11 @@ export default {
     flex-direction: column;
   }
 
+  .navbar__container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
   .navbar__btns {
     flex-direction: column;
     margin: 30px 0;
@@ -94,7 +134,9 @@ export default {
   }
 }
 
-@media (min-width: 1000px) {
-
+@media (max-width: 1600px) {
+ .navbar__container {
+  width: 90%;
+ }
 }
 </style>

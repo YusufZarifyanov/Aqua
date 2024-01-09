@@ -163,7 +163,7 @@ p {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   p {
     font-size: 10px;
   }
