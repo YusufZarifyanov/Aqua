@@ -9,6 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  button {
+    font-weight: 600;
+  }
 }
 
 nav {

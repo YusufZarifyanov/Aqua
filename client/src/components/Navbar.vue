@@ -83,7 +83,7 @@ export default {
 }
 
 .navbar__link {
-  width: 300px;
+  width: 250px;
   height: 35px;
   background-color: yellow;
   color: black;
@@ -157,7 +157,7 @@ a {
  }
 
  .navbar__link {
-  width: 200px;
+  width: 150px;
   height: 50px;
  }
 }
